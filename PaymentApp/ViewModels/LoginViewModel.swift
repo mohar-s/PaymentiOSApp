@@ -29,7 +29,7 @@ class LoginViewModel: ObservableObject {
         
         // API call
         let loginUrl = "https://dummyjson.com/auth/login" // use dummy url for login
-        LoginService().callLoginAPI(from: loginUrl, username: "emilys", password: "emilyspass") { login in
+        LoginService().callLoginAPI(from: loginUrl, username: username, password: password) { login in
             DispatchQueue.main.async {  // run the code on main to update the UI
                 self.isLoading = false
                 if let _ = login {
