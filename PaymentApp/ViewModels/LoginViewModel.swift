@@ -8,6 +8,8 @@
 import SwiftUI
 
 // MARK: - LoginViewModel
+
+// Create the Login view model for all bussiness logic
 class LoginViewModel: ObservableObject {
     @Published var username: String = ""
     @Published var password: String = ""

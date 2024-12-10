@@ -7,23 +7,8 @@
 
 import SwiftUI
 
-
-class TransactionData: ObservableObject {
-    @Published var transactions: [Transaction] = []
-
-    func addTransaction(amount: Double) {
-        let newTransaction = Transaction(id: UUID(), amount: amount, date: Date())
-        transactions.append(newTransaction)
-    }
-}
-
-struct Transaction: Identifiable {
-    let id: UUID
-    let amount: Double
-    let date: Date
-}
-
 struct ContentView: View {
+    
     @State private var isLoggedIn = false
     @State private var username = ""
     @State private var password = ""
@@ -36,6 +21,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
+            // check the users login status 
             if isLoggedIn {
                 HomeView(
                     isLoggedIn: $isLoggedIn,

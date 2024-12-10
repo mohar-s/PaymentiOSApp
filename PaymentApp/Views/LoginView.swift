@@ -19,10 +19,10 @@ struct LoginView: View {
             Text("Login").font(.title).bold()
             TextField("Username", text: $viewModel.username)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-
+                .textInputAutocapitalization(.never)
             SecureField("Password", text: $viewModel.password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-
+                .textInputAutocapitalization(.never)
             if let errorMessage = viewModel.errorMessage {
                 Text(errorMessage)
                     .foregroundColor(.red)

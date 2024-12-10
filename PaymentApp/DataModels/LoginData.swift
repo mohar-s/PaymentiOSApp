@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: - LoginData
+
 // Data model for Login api response
 struct LoginData: Codable {
     let accessToken, refreshToken: String

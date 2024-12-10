@@ -18,6 +18,7 @@ struct TransactionsView: View {
             List(transactionData.transactions) { transaction in
                 VStack(alignment: .leading) {
                     Text("Sent Rs \(transaction.amount, specifier: "%.2f")")
+                    Text("Reciver : \(transaction.name)")
                     Text(transaction.date, style: .date)
                         .font(.caption)
                         .foregroundColor(.gray)
@@ -31,6 +32,7 @@ struct TransactionsView: View {
 }
 
 #Preview {
+    // added single default to see the Preview
     @Previewable @State var transactionData = TransactionData()
     TransactionsView(transactionData: transactionData)
 }

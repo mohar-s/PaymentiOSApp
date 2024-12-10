@@ -29,7 +29,7 @@ struct HomeView: View {
                 }
             }
             .padding()
-
+            Spacer()
             NavigationLink("Send Money") {
                 SendMoneyView(balance: $balance, transactionData: transactionData, showBottomSheet: $showBottomSheet, bottomSheetMessage: $bottomSheetMessage)
             }

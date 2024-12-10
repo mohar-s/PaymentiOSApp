@@ -44,9 +44,13 @@ struct LoginService {
                         // Decode the Response and create the login data object
                         let loginData = try JSONDecoder().decode(
                             LoginData.self, from: data)
+                        
+                        // return the Response to main method
                         completion(loginData)
                         
                     } catch {
+                        
+                        // return the enpty to main method
                         completion(nil)
                     }
                 }
